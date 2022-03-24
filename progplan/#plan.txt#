@@ -1,0 +1,68 @@
+//Reiley Walther
+//CSC135
+//Fall 2018 - Program #1(Introduction)
+
+PROGRAM PLAN #1 - MONTHLY SALES TAX
+
+	Problem Statement:
+	 	 Develop a program to summarize and display a report of total cash collected, county, state and total tax and product sales for a given month and year.
+
+	Analysis:
+		Inputs:		Month, Year, Total collected
+		Outputs:	Month, Year, Total collected, Product sales, County sales tax, State sales tax, Total sales tax, Total sales tax all in a neat display
+		Formulas:	Product sales = Total collected/1.06
+				Total sales tax = Total collected - Product sales
+				County sales tax = Total sales tax * 1/3
+				State sales tax = Total sales tax * 2/3
+		Constraints:	The year cannot be after the current year
+				If the year is valid, the month cannot be after the current month
+				Total amount collected must be > 0
+		Assumptions:	User will enter, in this order when prompted, the month, year and the total amount collected
+
+	Design:	
+		1. Get the input from the user
+		       Get the month
+		       Get the year
+		       Get the total amount collected
+		2. Process data collected and calculate
+		       Find product sales
+		       formula: Product sales	 = Total collected/1.06
+		       Find Total sales tax
+		       formula: Total sales tax  = Total collected - Product sales
+		       Find County sales tax
+		       formula: County sales tax = Total sales tax * 1/3
+		       Find State sales tax
+		       formula: State sales tax  = Total sales tax * 2/3
+		3. Display the output of calculated values
+		       Display Month and year followed by a line
+		       Display Total amount collected, product sales, County sales tax, State sales tax and Total sales tax
+	   
+	Test Plan:
+		Run program with the following different inputs:
+		    Input A 	     	       Output A
+		    February		       February
+		    2015		       2015
+		    31459		       31459.00	(Total collected)
+		    			       29678.31 (Product sales)
+					         593.56	(County sales tax)
+					        1187.13	(State sales tax)
+					        1780.69 (Total sales tax)
+
+		    Input B		       Output B
+		    August		       August
+		    2008		       2008
+		    18400		       18400.00 (Total collected)
+		    			       17358.50	(Product sales)
+					         347.17	(County sales tax)
+					         694.33	(State sales tax)
+					        1041.50	(Total sales tax)	
+		    			       
+		    Input C		       Output C
+		    May	  		       May
+		    2018		       2018
+		    0			       Invalid Input!
+
+	Time Estimates:
+		1. Program Plan: 75 minutes
+		2. Write code of program: 1 hour
+		3. Test and Debug: 30 minutes
