@@ -1,0 +1,44 @@
+#include <iostream>
+#include <iomanip>
+#include "Student.h"
+
+using namespace std;
+
+// Output a Student
+ostream& operator<<(ostream &os, const Student &S) {
+   os << fixed << setprecision(2)
+     << left << setw(12) << S.getName() << "  " << right
+     << setw(4) << S.getGPA() << endl;
+  return os;
+}
+
+// input a Student
+istream& operator>>(istream &is, Student &S) {
+  string name; float gpa;
+  is >> name >> gpa;
+  S.setName(name);
+  S.setGPA(gpa);
+  return is;
+}
+
+//////////////////////////////////////////
+// Complete the following operators:
+//   operator==
+//   operator>=
+//////////////////////////////////////////
+
+// operator== should compare Student names
+bool Student::operator==(const Student &s) {
+  if(this.getName() == s.getName())
+    return true;
+  else
+    return false;
+}
+
+// operator>= should compare Student gpa's
+bool Student::operator>=(const Student &s) {
+  if(this.getGPA() > s.getGPA() || this.GPA() == s.getGPA())
+    return true;
+  else
+    return false;
+}
